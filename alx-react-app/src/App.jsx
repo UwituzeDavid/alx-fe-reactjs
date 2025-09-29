@@ -1,10 +1,11 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from './assets/vite.svg'; // ✅ FIXED: use relative path
+import './App.css';
+import WelcomeMessage from './components/WelcomeMessage.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -17,12 +18,14 @@ function App() {
         </a>
       </div>
       <div>
-      <h1>Vite + React</h1>
-      <h1>hello world</h1>
+        <h1>Vite + React</h1>
+        <h1>Hello World</h1>
       </div>
-      
+      <div>
+        <WelcomeMessage />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
