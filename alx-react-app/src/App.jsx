@@ -3,10 +3,13 @@ import reactLogo from './assets/react.svg';
 import viteLogo from "./assets/vite.svg"; // ✅ no space before the path
 import './App.css';
 
-import WelcomeMessage from './components/WelcomeMessage.jsx';
-import Header from './Header';
-import MainContent from './MainContent';
-import Footer from './Footer';
+import WelcomeMessage from "./components/WelcomeMessage";
+import Header from "./components/Header";
+import MainContent from "./components/MainContent";
+import Footer from './components/Footer';
+
+import UserProfile from './components/UserProfile';
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -32,10 +35,12 @@ function App() {
       {/* Welcome Message */}
       <WelcomeMessage />
 
+      <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
       {/* Page Structure */}
       <Header />
       <MainContent />
       <Footer />
+     
     </>
   );
 }
