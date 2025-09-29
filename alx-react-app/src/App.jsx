@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import reactLogo from './assets/react.svg';
+import viteLogo from ' ./assets/vite.svg';
 import './App.css';
 
 import WelcomeMessage from './components/WelcomeMessage.jsx';
@@ -14,6 +15,9 @@ function App() {
     <>
       {/* Logos Section */}
       <div className="logo-container">
+        <a href="https://vite.dev" target="_blank" rel="noopener noreferrer">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
         <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
