@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import reactLogo from './assets/react.svg';
-import viteLogo from ' ./assets/vite.svg';
+import viteLogo from "./assets/vite.svg"; // ✅ no space before the path
 import './App.css';
 
 import WelcomeMessage from './components/WelcomeMessage.jsx';
