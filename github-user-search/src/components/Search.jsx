@@ -41,7 +41,7 @@ function Search() {
       </form>
 
       {loading && <p>Loading...</p>}
-      {error && <p>Looks like we can't find the user.</p>}
+      {error && <p>Looks like we cant find the user</p>}
       {user && (
         <div style={{ border: '1px solid #ccc', padding: '20px', maxWidth: '400px' }}>
           <img src={user.avatar_url} alt={user.login} width="100" />
