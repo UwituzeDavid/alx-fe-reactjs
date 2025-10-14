@@ -32,7 +32,7 @@ function App() {
       </p>
       return (
     <div style={{ padding: '2rem' }}>
-      <h1> Recipe Sharing App</h1>
+      <h1>🍽️ Recipe Sharing App</h1>
       <AddRecipeForm />
       <hr />
       <RecipeList />
