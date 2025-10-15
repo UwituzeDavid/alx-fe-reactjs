@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import AddRecipeForm from './components/AddRecipeForm';
 import RecipeList from './components/RecipeList';
+import RecipeDetails from './components/RecipeDetails';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
 function App() {
@@ -38,6 +40,14 @@ function App() {
       <hr />
       <RecipeList />
     </div>
+  );
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<RecipeList />} />
+        <Route path="/recipe/:id" element={<RecipeDetails />} />
+      </Routes>
+    </Router>
   );
     </>
   )
