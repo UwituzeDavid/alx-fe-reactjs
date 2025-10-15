@@ -6,6 +6,7 @@ import AddRecipeForm from './components/AddRecipeForm';
 import RecipeList from './components/RecipeList';
 import RecipeDetails from './components/RecipeDetails';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SearchBar from './components/SearchBar';
 
 
 function App() {
@@ -48,6 +49,13 @@ function App() {
         <Route path="/recipe/:id" element={<RecipeDetails />} />
       </Routes>
     </Router>
+  );
+  return (
+    <div style={{ maxWidth: '600px', margin: 'auto', padding: '2rem' }}>
+      <h1>Recipe Sharing App</h1>
+      <SearchBar />
+      <RecipeList />
+    </div>
   );
     </>
   )
