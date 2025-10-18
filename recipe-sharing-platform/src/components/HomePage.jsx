@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react';
-
+import { Link } from 'react-router-dom';
 function HomePage() {
   const [recipes, setRecipes] = useState([]);
-
+<Link to={`/recipe/${recipe.id}`}>
+  <h2 className="text-xl font-semibold text-gray-800 mb-2 hover:text-green-600 transition-colors duration-300">
+    {recipe.title}
+  </h2>
+</Link>
   useEffect(() => {
     fetch('/src/data.json')
       .then(res => res.json())
