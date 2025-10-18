@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+    const errors = {};
 function AddRecipeForm() {
   const [title, setTitle] = useState('');
   const [ingredients, setIngredients] = useState('');
@@ -9,27 +9,38 @@ function AddRecipeForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newErrors = {};
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const newErrors = validate({ title, ingredients, steps });
+      
+        if (Object.keys(newErrors).length > 0) {
+          setErrors(newErrors);
+          return;
+        }
+      
+        // Submit logic
+        console.log({ title, ingredients, steps });
+        alert('Recipe submitted successfully!');
+        setTitle('');
+        setIngredients('');
+        setSteps('');
+        setErrors({});
+      };
+      
 
-    if (!title.trim()) newErrors.title = 'Title is required.';
-    if (!ingredients.trim()) {
-      newErrors.ingredients = 'Ingredients are required.';
-    } else if (ingredients.split(',').length < 2) {
-      newErrors.ingredients = 'Please list at least two ingredients.';
-    }
-    if (!steps.trim()) newErrors.steps = 'Preparation steps are required.';
-
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
-    }
-
-    // Submit logic here (e.g., send to API or local state)
-    console.log({ title, ingredients, steps });
-    alert('Recipe submitted successfully!');
-    setTitle('');
-    setIngredients('');
-    setSteps('');
-    setErrors({});
+    function validate({ title, ingredients, steps }) {
+        const errors = {};
+      
+        if (!title.trim()) errors.title = 'Title is required.';
+        if (!ingredients.trim()) {
+          errors.ingredients = 'Ingredients are required.';
+        } else if (ingredients.split(',').length < 2) {
+          errors.ingredients = 'Please list at least two ingredients.';
+        }
+        if (!steps.trim()) errors.steps = 'Preparation steps are required.';
+      
+        return errors;
+      }
   };
 
   return (
