@@ -43,7 +43,17 @@ function RecipeDetail() {
           <li>Step 3: Serve and enjoy!</li>
         </ol>
       </div>
+      <div>
+  <h2 className="text-xl font-semibold text-gray-800 mb-2">Instructions</h2>
+  <ol className="list-decimal list-inside text-gray-600 space-y-2">
+    {recipe.instructions.map((step, index) => (
+      <li key={index}>{step}</li>
+    ))}
+  </ol>
+</div>
+
     </div>
+
   );
 }
 
