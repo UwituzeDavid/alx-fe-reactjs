@@ -6,9 +6,6 @@ function AddRecipeForm() {
   const [steps, setSteps] = useState('');
   const [errors, setErrors] = useState({});
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const newErrors = {};
     const handleSubmit = (e) => {
         e.preventDefault();
         const newErrors = validate({ title, ingredients, steps });
