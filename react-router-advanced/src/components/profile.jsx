@@ -1,7 +1,8 @@
 // src/components/Profile.jsx
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import ProfileDetails from './profileDetails';
+import ProfileDetails from '.src/components/profileDetails';
+
 import ProfileSettings from './ProfileSettings';
 
 function Profile() {
