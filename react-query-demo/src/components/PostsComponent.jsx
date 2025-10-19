@@ -18,6 +18,8 @@ function PostsComponent() {
   } = useQuery(['posts'], fetchPosts, {
     staleTime: 1000 * 60 * 5, // 5 minutes
     cacheTime: 1000 * 60 * 10, // 10 minutes
+    refetchOnWindowFocus: false, // disable auto-refetch on tab focus
+    keepPreviousData: true, // retain previous data during transitions
   });
 
   if (isLoading) return <p>Loading posts...</p>;
