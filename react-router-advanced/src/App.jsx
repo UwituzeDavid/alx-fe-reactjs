@@ -6,7 +6,7 @@ import Profile from './pages/Profile';
 import BlogPost from './pages/BlogPost';
 import Login from './pages/Login';
 import ProtectedRoute from './components/ProtectedRoute';
-
+import { BrowserRouter } from 'react-router-dom';
 function App() {
   return (
     <Routes>
@@ -23,6 +23,11 @@ function App() {
       />
     </Routes>
   );
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+    );
 }
 
 export default App;
