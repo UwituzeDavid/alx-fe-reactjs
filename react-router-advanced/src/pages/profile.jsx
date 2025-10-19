@@ -2,8 +2,7 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import ProfileDetails from '.src/components/profileDetails';
-
-import ProfileSettings from './ProfileSettings';
+import ProfileSettings from './src/components/ProfileSettings';
 
 function Profile() {
   return (
