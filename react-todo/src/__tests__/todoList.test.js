@@ -1,10 +1,11 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom";
+import { render, screen, fireEvent } from "@testing-library/react";
 import TodoList from "../components/TodoList";
+import "@testing-library/jest-dom";
 
-test("renders initial todos", () => {
+test("adds a new todo", () => {
   render(<TodoList />);
-  expect(screen.getByText("Learn React")).toBeInTheDocument();
-  expect(screen.getByText("Build a Todo App")).toBeInTheDocument();
+  const input = screen.getByPlaceholderText("Enter new todo");
+  fireEvent.change(input, { target: { value: "Test Todo" } });
+  fireEvent.click(screen.getByText("Add Todo"));
+  expect(screen.getByText("Test Todo")).toBeInTheDocument();
 });
