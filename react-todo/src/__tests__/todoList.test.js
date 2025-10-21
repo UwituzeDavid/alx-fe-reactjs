@@ -1,9 +1,10 @@
+import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import TodoList from "../components/TodoList";
 
 test("renders initial todos", () => {
-  expect(screen.getByText('Learn React')).toBeInTheDocument(); // Initial render
-  expect(todo).toHaveClass('line-through');                    // Toggle
-  expect(todo).not.toBeInTheDocument();                        // Delete
+  render(<TodoList />);
+  expect(screen.getByText("Learn React")).toBeInTheDocument();
+  expect(screen.getByText("Build a Todo App")).toBeInTheDocument();
 });
