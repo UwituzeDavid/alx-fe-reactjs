@@ -1,28 +1,25 @@
 import React, { useState } from 'react';
 
-const AddTodoForm = ({ onAdd }) => {
-  const [text, setText] = useState('');
+const AddTodoForm = ({ onAddTodo }) => {
+  const [inputValue, setInputValue] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!text.trim()) return;
-
-    onAdd(text.trim());
-    setText('');
+    if (inputValue.trim()) {
+      onAddTodo(inputValue);
+      setInputValue('');
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex gap-2 mb-4">
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
         placeholder="Add a new todo"
-        className="flex-grow px-3 py-2 border rounded"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
       />
-    <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded">
-        Add
-      </button>
+      <button type="submit">Add</button>
     </form>
   );
 };
